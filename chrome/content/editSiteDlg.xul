@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://dsharp/skin/" type="text/css"?>
+<!DOCTYPE page SYSTEM "chrome://dsharp/locale/dsharp.dtd" >
+
+<dialog id="dsharp-editText"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    title="&editsite_window.label;"
+    buttondisabledaccept="true"
+    onload="load();"
+    ondialogaccept="return btnOkClick();"
+    ondialogcancel="return btnCancelClick();"
+    persist="width height screenX screenY"
+    windowtype="editSiteDialogWindowType">
+
+    <vbox>
+      <hbox align="center">
+        <label value="&editsite_sitename.label;"/>
+        <textbox flex="1" id="siteName" multiline="false" clickSelectsAll="true" oninput="checkValue();"/>
+      </hbox>
+
+      <hbox align="center">
+        <label value="&editsite_filter.label;"/>
+        <textbox flex="1" id="filter" multiline="false" clickSelectsAll="true" oninput="checkValue();"/>
+      </hbox>
+
+      <hbox align="center">
+        <label value="&editsite_replacef.label;"/>
+        <textbox flex="1" id="replacef" multiline="false" clickSelectsAll="true" oninput="checkValue();"/>
+        <label value="&editsite_replaceto.label;"/>
+        <textbox flex="1" id="replaceto" multiline="false" clickSelectsAll="true" oninput="checkValue();"/>
+      </hbox>
+
+      <hbox align="center">
+        <label value="&editsite_addr.label;"/>
+        <textbox flex="1" id="addr" multiline="false" clickSelectsAll="true" oninput="checkValue();"/>
+        <label control="case" value="&editsite_case.label;"/>
+        <menulist editable="false" id="case">
+          <menupopup>
+            <menuitem label="&editsite_nocase.label;" value="0"/>
+            <menuitem label="&editsite_uppercase.label;" value="1"/>
+            <menuitem label="&editsite_lowercase.label;" value="2"/>
+          </menupopup>
+        </menulist>
+      </hbox>
+
+      <hbox align="center">
+        <label value="&editsite_icon.label;"/>
+        <image id="icon" src="chrome://dsharp/skin/logo/logo16.png" style="opacity:0;width:16px;height:16px;"/>
+        <textbox flex="1" id="iconstr" multiline="false" readonly="true" clickSelectsAll="true" hidden="true"/>
+        <button flex="0" id='base64_SelectBtn' label="..." style="min-width: 12px;" oncommand="onSelectFile();"/>
+      </hbox>
+    </vbox>
+  <script type="application/x-javascript" src="chrome://dsharp/content/editSiteDlg.js"/>
+</dialog>

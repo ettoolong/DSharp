@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE page SYSTEM "chrome://dsharp/locale/dsharp.dtd" >
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window id="multise"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    title="&select_title.label;"
+    onload="DsharpList.init();"
+    onunload="DsharpList.finish();"
+    persist="width height screenX screenY sizemode"
+    windowtype="DsharpList">
+
+  <script type="application/x-javascript" src="chrome://dsharp/content/dsharpList.js"/>
+  <script type="application/x-javascript" src="chrome://dsharp/content/dsharpSite.js"/>
+  <box flex="1">
+    <vbox flex="1">
+      <hbox align="center">
+        <label value="&select_keyword.label;"/>
+        <textbox flex="1" id="TestText" oninput="DsharpList.updateList();"/>
+      </hbox>
+      <listbox flex="1" rows="10" width="500" id="SiteList" ondblclick="DsharpList.onSelectDsharp();" onselect="DsharpList.siteChanged();">
+        <listhead flex="1">
+          <listheader label="&select_sitename.label;" width="100"/>
+          <listheader label="&select_result.label;"/>
+        </listhead>
+        <listcols>
+          <listcol/>
+          <listcol flex="1"/>
+        </listcols>
+      </listbox>
+      <hbox>
+        <spacer flex="2" />
+        <button id="openSelectSite" label="&select_open.label;" oncommand="DsharpList.onSelectDsharp();"/>
+        <button label="&select_close.label;" oncommand="DsharpList.onCloseClick();"/>
+      </hbox>
+    </vbox>
+  </box>
+</window>

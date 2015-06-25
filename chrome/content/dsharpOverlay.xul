@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://dsharp/skin/" type="text/css"?>
+<!DOCTYPE window [
+<!ENTITY % dsharpDTD SYSTEM "chrome://dsharp/locale/dsharp.dtd" >
+%dsharpDTD;
+]>
+
+<overlay id="dsharpOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript" src="chrome://dsharp/content/dsharpSite.js"/>
+  <script type="application/x-javascript" src="chrome://dsharp/content/dsharpOverlay.js"/>
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="dsharp-strbundle" src="chrome://dsharp/locale/dsharp.properties"/>
+  </stringbundleset>
+
+  <commandset>
+    <command id="cmd_dsharp_opendsharptool" oncommand="EttDSharp.openDsharpTool();"/>
+    <command id="cmd_dsharp_autoResult" oncommand="EttDSharp.autoResult();"/>
+  </commandset>
+
+  <popup id="contentAreaContextMenu">
+    <menu id="dsharp_menu" label="&context_menu.label;" class="menu-iconic dsharp-menu" iconic="menu-iconic dsharp-menu" >
+      <menupopup id="dsharp_submenu-decode">
+      </menupopup>
+    </menu>
+    <menuitem id="dsharp_autoResult" label="&context_menu.label;" class="menuitem-iconic dsharp-menu" iconic="menuitem-iconic dsharp-menu" command="cmd_dsharp_autoResult"/>
+  </popup>
+
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton id="dsharp-toolbar-button"
+      class="toolbarbutton-1 chromeclass-toolbar-additional"
+      label="&toolbutton_title.label;"
+      tooltiptext="&toolbutton_tip.label;"
+      command="cmd_dsharp_opendsharptool" />
+  </toolbarpalette>
+
+</overlay>

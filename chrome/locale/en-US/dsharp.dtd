@@ -1,0 +1,36 @@
+﻿<!ENTITY select_title.label "Select site">
+<!ENTITY select_keyword.label "Key word">
+<!ENTITY select_close.label "Close">
+<!ENTITY select_open.label "Open Select URL">
+<!ENTITY select_sitename.label "Filter">
+<!ENTITY select_result.label "Result URL">
+<!ENTITY context_menu.label "D Sharp">
+<!ENTITY option_title.label "D Sharp Preferences">
+<!ENTITY option_siteenable.label "Enabled">
+<!ENTITY option_sitename.label "Site Name">
+<!ENTITY option_importsitesetting.label "Import">
+<!ENTITY option_exportsitesetting.label "Export">
+<!ENTITY option_addnewsitesetting.label "Add Filter">
+<!ENTITY option_delselsitesetting.label "Delete Filter">
+<!ENTITY option_modifyselsitesetting.label "Modify Filter">
+<!ENTITY editsite_window.label "Edit Filter">
+<!ENTITY editsite_sitename.label "Site Name">
+<!ENTITY editsite_filter.label "Filter">
+<!ENTITY editsite_replacef.label "Replace Filter">
+<!ENTITY editsite_replaceto.label "Replace to">
+<!ENTITY editsite_addr.label "Re-director to">
+<!ENTITY editsite_case.label "Case">
+<!ENTITY editsite_nocase.label "Not Change">
+<!ENTITY editsite_uppercase.label "Upper-Case">
+<!ENTITY editsite_lowercase.label "Lower-Case">
+<!ENTITY editsite_icon.label "Icon">
+<!ENTITY option_action.label "Action">
+<!ENTITY option_actionNewTab.label "Open URL in new tab">
+<!ENTITY option_actionBgTab.label "Open URL in background tab">
+<!ENTITY option_actionCopy.label "Copy URL to clipboard">
+<!ENTITY option_autoResult.label "Don't use sub-menu when only one result.">
+<!ENTITY option_sitesetting.label "Filter setting">
+<!ENTITY option_moveup.label "Move UP">
+<!ENTITY option_movedown.label "Move Down">
+<!ENTITY toolbutton_title.label "D Sharp tool">
+<!ENTITY toolbutton_tip.label "Open D Sharp tool">

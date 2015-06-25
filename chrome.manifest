@@ -1,0 +1,8 @@
+content  dsharp  chrome/content/
+skin  dsharp  classic/1.0  chrome/skin/
+overlay	chrome://browser/content/browser.xul chrome://dsharp/content/dsharpOverlay.xul
+style	chrome://global/content/customizeToolbar.xul	chrome://dsharp/skin/dsharp.css
+
+locale dsharp en-US chrome/locale/en-US/
+locale dsharp zh-TW chrome/locale/zh-TW/
+locale dsharp zh-CN chrome/locale/zh-CN/

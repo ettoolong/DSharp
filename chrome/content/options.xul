@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://dsharp/skin/" type="text/css"?>
+
+<!DOCTYPE prefwindow SYSTEM "chrome://dsharp/locale/dsharp.dtd">
+
+<prefwindow id="dsharpOption"
+            xmlns:html="http://www.w3.org/1999/xhtml"
+            xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+            onload="load();"
+            ondialogaccept="save();"
+            ondialogcancel="cancel();"
+            title="&option_title.label;">
+
+        <stringbundleset id="stringbundleset">
+            <stringbundle id="dsharp-strbundle" src="chrome://dsharp/locale/dsharp.properties"/>
+        </stringbundleset>
+
+  <prefpane id="generalpane" label="&option_title.label;">
+
+    <box flex="1">
+      <vbox flex="1">
+        <checkbox id="autoResult" label="&option_autoResult.label;" dsharpDefaultValue="true"/>
+
+        <hbox align="center">
+          <label control="action" value="&option_action.label;"/>
+          <menulist editable="false" id="action" dsharpDefaultValue="0">
+            <menupopup>
+              <menuitem label="&option_actionNewTab.label;" value="0"/>
+              <menuitem label="&option_actionBgTab.label;" value="2"/>
+              <menuitem label="&option_actionCopy.label;" value="1"/>
+            </menupopup>
+          </menulist>
+        </hbox>
+
+        <groupbox>
+          <caption label="&option_sitesetting.label;"/>
+          <vbox>
+            <hbox>
+              <tree id="treeSiteList" flex="1" width="375" height="170" seltype="single" enableColumnDrag="true" disableKeyNavigation="true" hidecolumnpicker="true" editable="true" onselect="updateDelButtonStatus(event);">
+                <treecols>
+                  <treecol id="columnEnabled" label="&option_siteenable.label;" flex="0" persist="width ordinal hidden" type="checkbox" editable="true" />
+                  <splitter class="tree-splitter"/>
+                  <treecol id="columnSite" label="&option_sitename.label;" flex="1" persist="width ordinal hidden" editable="false" />
+                </treecols>
+                <treechildren id="siteItems" ondblclick="modifySelSiteSetting(event);" onclick="updateCheckBoxState(event);"/>
+              </tree>
+              <vbox>
+                <button id="btnMoveUp" label="&option_moveup.label;" oncommand="siteSettingMoveUp();"/>
+                <button id="btnMoveDown" label="&option_movedown.label;" oncommand="siteSettingMoveDown();"/>
+              </vbox>
+            </hbox>
+
+            <hbox>
+              <button id="btnImport" label="&option_importsitesetting.label;" oncommand="importSiteSetting();"/>
+              <button id="btnExport" label="&option_exportsitesetting.label;" oncommand="exportSiteSetting();"/>
+              <spacer flex="2" />
+              <button id="btnAdd" label="&option_addnewsitesetting.label;" oncommand="addNewSiteSetting();"/>
+              <button id="btnDel" label="&option_delselsitesetting.label;" disabled="true" oncommand="delSelSiteSetting();"/>
+              <button id="btnModify" label="&option_modifyselsitesetting.label;" disabled="true" oncommand="modifySelSiteSetting();"/>
+            </hbox>
+          </vbox>
+        </groupbox>
+      </vbox>
+    </box>
+
+  </prefpane>
+
+  <script type="application/x-javascript" src="chrome://dsharp/content/options.js"/>
+  <script type="application/x-javascript" src="chrome://dsharp/content/dsharpSite.js"/>
+</prefwindow>
